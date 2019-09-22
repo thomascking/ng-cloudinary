@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgCloudinaryModule } from 'projects/ng-cloudinary/src/public-api';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCloudinaryModule.forRoot({cloudName: 'dog9m708i'})
   ],
   providers: [],
   bootstrap: [AppComponent]

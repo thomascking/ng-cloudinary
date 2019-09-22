@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-cloudinary": [
+        "dist/ng-cloudinary"
+      ],
+      "ng-cloudinary/*": [
+        "dist/ng-cloudinary/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

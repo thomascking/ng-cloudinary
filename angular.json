@@ -124,6 +124,41 @@
           }
         }
       }
+    },
+    "ng-cloudinary": {
+      "projectType": "library",
+      "root": "projects/ng-cloudinary",
+      "sourceRoot": "projects/ng-cloudinary/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-cloudinary/tsconfig.lib.json",
+            "project": "projects/ng-cloudinary/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-cloudinary/src/test.ts",
+            "tsConfig": "projects/ng-cloudinary/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-cloudinary/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-cloudinary/tsconfig.lib.json",
+              "projects/ng-cloudinary/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "cloudinary"
 }
