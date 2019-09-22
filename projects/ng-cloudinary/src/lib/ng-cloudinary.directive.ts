@@ -30,7 +30,7 @@ export class NgCloudinaryBackgroundDirective implements OnInit {
   constructor(private el: ElementRef, private cloudinaryService: NgCloudinaryService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this.url = this.sanitizer.bypassSecurityTrustStyle(`url('${this.cloudinaryService.getUrl(this.libClBgSrc, this.transform)}.jpg')`);
+    this.url = this.sanitizer.bypassSecurityTrustStyle(`url('${this.cloudinaryService.getUrl(this.libClBgSrc, this.transform)}')`);
     console.log(this.url);
   }
 
