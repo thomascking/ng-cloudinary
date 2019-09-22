@@ -11,7 +11,7 @@ export class NgCloudinaryDirective implements OnInit {
   @HostBinding('src') url?: string;
   @Input() transform: CloudinaryTransform;
 
-  constructor(private el: ElementRef, private cloudinaryService: NgCloudinaryService) { }
+  constructor(private cloudinaryService: NgCloudinaryService) { }
 
   ngOnInit() {
     this.url = this.cloudinaryService.getUrl(this.libClSrc, this.transform);
@@ -27,7 +27,7 @@ export class NgCloudinaryBackgroundDirective implements OnInit {
   @HostBinding('style.background-image') url?: SafeStyle;
   @Input() transform: CloudinaryTransform;
 
-  constructor(private el: ElementRef, private cloudinaryService: NgCloudinaryService, private sanitizer: DomSanitizer) { }
+  constructor(private cloudinaryService: NgCloudinaryService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.url = this.sanitizer.bypassSecurityTrustStyle(`url('${this.cloudinaryService.getUrl(this.libClBgSrc, this.transform)}')`);
